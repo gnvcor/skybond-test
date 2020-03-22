@@ -48,7 +48,7 @@ const GraphComponent = ({ data, Controls }: IGraphComponent) => (
             <YAxis domain={['auto', 'auto']} />
             <Line dataKey="value" stroke="#cccccc" fill="#cccccc" label={<LineLabel />} />
         </LineChart>
-        {Controls}
+        <div className={styles.controls}>{Controls}</div>
     </div>
 )
 

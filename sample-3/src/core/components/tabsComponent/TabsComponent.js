@@ -15,6 +15,7 @@ type ITabsComponent = {
     data: {
         id: string,
         value: string,
+        onClick: () => void,
     }[],
     activeId: string,
 }

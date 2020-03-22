@@ -1,6 +1,8 @@
+import React from 'react'
 import compose from 'recompose/compose'
 import withProps from 'recompose/withProps'
 import GraphComponent from '../../core/components/graphComponent/GraphComponent'
+import SelectContainer from './SelectContainer'
 
 export default compose(
     withProps({
@@ -17,5 +19,6 @@ export default compose(
             { date: '24.02', value: 34.75 },
             { date: '25.02', value: 35.25 },
         ],
+        Controls: <SelectContainer />
     }),
 )(GraphComponent)

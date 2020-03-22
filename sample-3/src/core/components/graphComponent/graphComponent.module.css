@@ -16,3 +16,9 @@
     font-size: var(--font-size-100);
     background: var(--white-color);
 }
+
+.controls {
+    position: absolute;
+    bottom: 59px;
+    right: 103px;
+}

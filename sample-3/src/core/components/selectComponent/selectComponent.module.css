@@ -1,0 +1,30 @@
+@import "../../styles/variables.css";
+
+.container {
+    position: relative;
+}
+
+.item {
+    position: relative;
+    width: 107px;
+    padding: 5px 7px;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background: rgb(206,206,206);
+    background: linear-gradient(180deg, rgba(206,206,206,1) 0%, rgba(228,228,228,1) 30%);
+}
+
+.item:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 11px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 5px 0 5px;
+    border-color: #034343 transparent transparent transparent;
+}
