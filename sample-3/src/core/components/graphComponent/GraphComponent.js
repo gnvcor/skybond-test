@@ -4,33 +4,44 @@ import React, { Node } from 'react'
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from 'recharts'
 import styles from './graphComponent.module.css'
 
-type IGraphComponent = {
+type IGraphData = {
     data: {
         date: string,
         value: number,
-    }[],
+    }[]
+}
+
+type IGraphComponent = IGraphData & {
     Controls: Node,
 }
 
-type ILineLabel = {
+type ILineLabel = IGraphData & {
+    index: number,
     x: number,
     y: number,
     stroke: string,
     value: number,
 }
 
-const LineLabel = ({ x, y, stroke, value }: ILineLabel) => (
-    <text
-        x={x}
-        y={y}
-        dy={-12}
-        fill={stroke}
-        className={styles.label}
-        textAnchor="middle"
-    >
-        {value}
-    </text>
-)
+const LineLabel = ({ data, index, x, y, stroke, value }: ILineLabel) => {
+    const MAX_LENGTH_DATA = 14
+
+    // Если количество точек на графике больше 14, label выводим только для четных элементов
+    if (data.length > MAX_LENGTH_DATA && index % 2 === 0) return false
+
+    return (
+        <text
+            x={x}
+            y={y}
+            dy={-12}
+            fill={stroke}
+            className={styles.label}
+            textAnchor="middle"
+        >
+            {value}
+        </text>
+    )
+}
 
 const GraphComponent = ({ data, Controls }: IGraphComponent) => (
     <div className={styles.wrapper}>
@@ -46,7 +57,7 @@ const GraphComponent = ({ data, Controls }: IGraphComponent) => (
             <CartesianGrid />
             <XAxis dataKey="date" />
             <YAxis domain={['auto', 'auto']} />
-            <Line dataKey="value" stroke="#cccccc" fill="#cccccc" label={<LineLabel />} />
+            <Line dataKey="value" stroke="#cccccc" fill="#cccccc" label={<LineLabel data={data} />} />
         </LineChart>
         <div className={styles.controls}>{Controls}</div>
     </div>
