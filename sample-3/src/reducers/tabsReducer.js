@@ -37,7 +37,7 @@ export default (state = initialState, { type, payload }) => {
     if (type === ACTION_CHANGE_TAB) {
         return {
             ...state,
-            activeId: payload.id
+            activeId: payload.id,
         }
     }
 
