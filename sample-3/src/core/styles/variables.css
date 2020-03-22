@@ -1,0 +1,11 @@
+:root {
+    --border-color: #c8c8c8;
+
+    --font-size-300: 15px;
+    --font-size-500: 19px;
+    --font-size-900: 33px;
+
+    --font-weight-bold: 600;
+
+    --font: sans-serif;
+}
