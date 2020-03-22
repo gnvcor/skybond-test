@@ -1,6 +1,6 @@
 // @flow
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useLayoutEffect } from 'react'
 import styles from './selectComponent.module.css'
 import DropdownElement from './DropdownElement'
 
@@ -28,11 +28,13 @@ const SelectComponent = ({ data, activeId }: ISelectComponent) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
-    const onOpenDropdown = e => {
-        e.preventDefault()
+    const closeDropdown = () => setIsOpen(false)
+
+    const onToggleDropdown = e => {
+        e.stopPropagation()
 
         if (isOpen) {
-            setIsOpen(false)
+            closeDropdown()
 
             return
         }
@@ -40,22 +42,22 @@ const SelectComponent = ({ data, activeId }: ISelectComponent) => {
         setIsOpen(true)
     }
 
-    useEffect(() => {
-        document.addEventListener('click', onOpenDropdown)
+    useLayoutEffect(() => {
+        document.addEventListener('click', closeDropdown)
 
         return () => {
-            document.removeEventListener('click', onOpenDropdown)
+            document.removeEventListener('click', closeDropdown)
         }
     })
 
     return (
         <div className={styles.container}>
-            <SelectElement onClick={onOpenDropdown} value={getActiveValue()} />
+            <SelectElement onClick={onToggleDropdown} value={getActiveValue()} />
             {isOpen && (
                 <DropdownElement
                     data={data}
                     activeId={activeId}
-                    onOpenDropdown={onOpenDropdown}
+                    onToggleDropdown={onToggleDropdown}
                 />
             )}
         </div>

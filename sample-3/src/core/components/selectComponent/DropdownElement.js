@@ -20,14 +20,14 @@ type IDropdownElement = {
         onClick: () => void,
     }[],
     activeId: string,
-    onOpenDropdown: () => void,
+    onToggleDropdown: () => void,
 }
 
 const Element = compose(
     withHandlers({
         onItemClick: props => e => {
             props.onClick()
-            props.onOpenDropdown(e)
+            props.onToggleDropdown(e)
         }
     }),
 )(({ id, value, activeId, onItemClick }: IElement) => (
@@ -36,14 +36,14 @@ const Element = compose(
     </div>
 ))
 
-const DropdownElement = ({ data, activeId, onOpenDropdown }: IDropdownElement) => (
+const DropdownElement = ({ data, activeId, onToggleDropdown }: IDropdownElement) => (
     <div className={styles.container}>
         {data.map(element => (
             <Element
                 key={element.id}
                 {...element}
                 activeId={activeId}
-                onOpenDropdown={onOpenDropdown}
+                onToggleDropdown={onToggleDropdown}
             />
         ))}
     </div>
