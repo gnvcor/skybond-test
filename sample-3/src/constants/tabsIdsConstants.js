@@ -1,0 +1,5 @@
+export const TAB_ID_WEEK = 'week'
+export const TAB_ID_MONTH = 'month'
+export const TAB_ID_QUARTER = 'quarter'
+export const TAB_ID_YEAR = 'year'
+export const TAB_ID_MAX = 'max'

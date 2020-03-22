@@ -1,0 +1,27 @@
+@import "../../styles/variables.css";
+
+.container {
+    display: flex;
+    margin-top: 13px;
+}
+
+.item {
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    padding: 5px 7px;
+    margin-right: -1px;
+}
+
+.item:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+.item:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+.active {
+    cursor: default;
+    background: rgb(206,206,206);
+    background: linear-gradient(180deg, rgba(206,206,206,1) 0%, rgba(228,228,228,1) 30%);
+}
