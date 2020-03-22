@@ -3,6 +3,7 @@ import {
     SELECT_ID_SPREAD,
     SELECT_ID_PRICE,
 } from '../constants/selectIdsConstants'
+import { ACTION_CHANGE_SELECT } from '../constants/selectActionNamesConstants'
 
 const initialState = {
     data: [
@@ -22,6 +23,13 @@ const initialState = {
     activeId: SELECT_ID_PRICE,
 }
 
-export default (state = initialState, action) => {
+export default (state = initialState, { type, payload }) => {
+    if (type === ACTION_CHANGE_SELECT) {
+        return {
+            ...state,
+            activeId: payload.id
+        }
+    }
+
     return state
 }

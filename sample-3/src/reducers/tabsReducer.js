@@ -5,6 +5,7 @@ import {
     TAB_ID_WEEK,
     TAB_ID_YEAR,
 } from '../constants/tabsIdsConstants'
+import { ACTION_CHANGE_TAB } from '../constants/tabActionNamesConstants'
 
 const initialState = {
     data: [
@@ -32,6 +33,13 @@ const initialState = {
     activeId: TAB_ID_MONTH,
 }
 
-export default (state = initialState, action) => {
+export default (state = initialState, { type, payload }) => {
+    if (type === ACTION_CHANGE_TAB) {
+        return {
+            ...state,
+            activeId: payload.id
+        }
+    }
+
     return state
 }
