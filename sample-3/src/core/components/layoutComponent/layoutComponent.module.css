@@ -1,0 +1,6 @@
+@import "../../styles/variables.css";
+
+.container {
+    max-width: 478px;
+    font-family: var(--font);
+}
