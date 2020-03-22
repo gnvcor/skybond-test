@@ -1,0 +1,28 @@
+@import '../../styles/variables.css';
+
+.container {
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.heading {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 17px;
+}
+
+.title {
+    font-size: var(--font-size-900);
+    font-weight: var(--font-weight-bold);
+    margin-right: 13px;
+    line-height: 29px;
+}
+
+.subTitle {
+    font-size: var(--font-size-500);
+}
+
+.meta {
+    line-height: 19px;
+    font-size: var(--font-size-300);
+}
