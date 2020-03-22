@@ -57,7 +57,13 @@ const GraphComponent = ({ data, Controls }: IGraphComponent) => (
             <CartesianGrid />
             <XAxis dataKey="date" />
             <YAxis domain={['auto', 'auto']} />
-            <Line dataKey="value" stroke="#cccccc" fill="#cccccc" label={<LineLabel data={data} />} />
+            <Line
+                dataKey="value"
+                stroke="#cccccc"
+                strokeWidth={2}
+                fill="#cccccc"
+                label={<LineLabel data={data} />}
+            />
         </LineChart>
         <div className={styles.controls}>{Controls}</div>
     </div>
