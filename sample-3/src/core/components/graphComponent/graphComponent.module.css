@@ -1,0 +1,18 @@
+@import '../../styles/variables.css';
+
+.container {
+    position: relative;
+    margin-left: -78px;
+    font-size: var(--font-size-100);
+    color: #989898;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.label {
+    position: absolute;
+    font-size: var(--font-size-100);
+    background: var(--white-color);
+}

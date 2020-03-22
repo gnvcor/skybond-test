@@ -2,5 +2,6 @@
 
 .container {
     max-width: 478px;
+    padding: 21px;
     font-family: var(--font);
 }

@@ -1,6 +1,8 @@
 :root {
+    --white-color: #fff;
     --border-color: #c8c8c8;
 
+    --font-size-100: 11px;
     --font-size-300: 15px;
     --font-size-500: 19px;
     --font-size-900: 33px;
