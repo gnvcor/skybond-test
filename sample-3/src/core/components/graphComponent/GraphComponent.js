@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Node } from 'react'
+import React, { type Node } from 'react'
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from 'recharts'
 import styles from './graphComponent.module.css'
 
@@ -62,7 +62,9 @@ const GraphComponent = ({ data, Controls }: IGraphComponent) => (
                 stroke="#cccccc"
                 strokeWidth={2}
                 fill="#cccccc"
-                label={<LineLabel data={data} />}
+                label={({ index, x, y, stroke, value }) =>
+                    <LineLabel data={data} index={index} x={x} y={y} stroke={stroke} value={value} />
+                }
             />
         </LineChart>
         <div className={styles.controls}>{Controls}</div>

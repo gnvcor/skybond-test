@@ -1,6 +1,6 @@
 // @flow
 
-import React, { Node } from 'react'
+import React, { type Node } from 'react'
 import styles from './headingComponent.module.css'
 
 type IHeadingComponent = {
@@ -16,7 +16,7 @@ const HeadingComponent = ({ title, subTitle, Meta }: IHeadingComponent) => (
             <div className={styles.subTitle}>{subTitle}</div>
         </div>
         <div className={styles.meta}>
-            <Meta />
+            {Meta}
         </div>
     </div>
 )

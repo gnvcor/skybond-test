@@ -1,4 +1,4 @@
-import React, { Node } from 'react'
+import React, { type Node } from 'react'
 import styles from './layoutComponent.module.css'
 
 type ILayoutComponent = {
